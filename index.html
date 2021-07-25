@@ -8,65 +8,71 @@
     <title>calcolo del prezzo del biglietto del treno con form</title>
 </head>
 <body>
-    <div class="wrap">
-        <header>
-            <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-        </header>
-
-        <main>
-            <div class="container">
-                <div>
-                <label for="nome">Nome e Cognome</label>
-                <label for="km">Inserisci i km</label>
-                <label for="eta">Fascia d'età</label>
+    <div class="wrapper">
+        <h1 class="title">Calcola il prezzo del tuo biglietto</h1>
+        <div class="dati-input">
+            <div class="row">
+                <div class="col">
+                    <label for="name">Nome e Cognome</label>
+                    <input id="nome" type="text" placeholder="Inserisci il tuo nome">
                 </div>
-                <div>
-                    <input type="text" placeholder="Inserisci il tuo nome"name="nome">
-                    <input type="number" placeholder="Inserisci i km" name="km">
-                    <select name="eta" id="eta">
+
+                <div class="col">
+                    <label for="km">Km da percorrere</label>
+                    <input id="km" type="number" placeholder="Inserisci i km">
+                </div>
+
+                <div class="col">
+                    <label for="kmfascia-eta">Fascia d'età</label>
+                    <select name="fascia-eta" id="fascia-eta">
                         <option value="minorenne">Minorenne</option>
                         <option value="maggiorenne">Maggiorenne</option>
                         <option value="over65">Over65</option>
                     </select>
                 </div>
-                <div>
-                    <button id="calcola" name="calcola">Genera</button>
-                    <button id="annulla"name="annulla">Annulla</button>
-                </div>
-                
             </div>
-
-            <div class="container_secondo">
-                <h1>IL TUO BIGLIETTO</h1>
-                <div id="ticket">
-                <h3>DETTAGLI PASSEGGERI</h3>
-                    <hr>
-                        <div class="informazioni">
-                            <div class="passeggeri">
-                                <h3>NOME PASSEGGERO</h3>
-                            </div>
-
-                            <div class="offerta">
-                                <h3>Offerta</h3>
-                                <span>Prezzo standard</span>
-                            </div>
-
-                            <div class="carro">
-                                <h3>Carrozza</h3>
-                            </div>
-
-                            <div class="codice">
-                                <h3>Codice CP</h3>
-                            </div>
-
-                            <div class="prezzo">
-                                <h3>Costo biglietto</h3>
-                            </div>
-                        </div>
-                    <hr>         
-                </div>
+            <div class="row">
+                <button class="btn" id="calcolaPrezzo" name="calcolaPrezzo">Genera</button>
+                <button class="btn" id="annulla" name="annulla">Annulla</button>
             </div>
-        </main>
+        </div>
+
+        <section class="biglietto">
+            <h2 class="title">Il tuo biglietto</h2>
+            <div id="biglietto">
+                <h2>Dettaglio passeggeri</h2>
+                <div class="dati">
+                    <div class="nome">
+                        <h2>Nome Passeggero</h2>
+                        <h3 id="nome_biglietto"></h3>
+                    </div>
+
+                    <div class="offerta">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Offerta</th>
+                                    <th>Carrozza</th>
+                                    <th>Codice Cp</th>
+                                    <th>Costo Biglietto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span id="offerta-applicata"></span></td>
+                                    <td><span id="carrozza"></span></td>
+                                    <td><span id="codice"></span></td>
+                                    <td><span id="costo-biglietto"></span></td>
+                                </tr>
+                            </tbody>    
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        
     </div>
     <script src="js/main.js"></script>
 </body>
